@@ -22,7 +22,7 @@ jobs:
     - name: Create gdnsl.yaml
       run: |
         cat <<EOF >gdnsl.yaml
-        url: https://gdn.paas.macrometa.io
+        url: https://play.macrometa.io/
         email: ${{ secrets.MACROMETA_EMAIL }}
         apikey: ${{ secrets.MACROMETA_APIKEY }}
         regions:
