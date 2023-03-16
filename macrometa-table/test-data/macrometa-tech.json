@@ -1,0 +1,21 @@
+[
+    {
+      "id": 1,
+      "name": "Query Workers",
+      "codeName": "Flying Octopus",
+      "function": "API on the fly"
+    },
+    {
+      "id": 2,
+      "name": "Stream Workers",
+      "codeName": "Nuclear Octopus",
+      "function": "Anything with data in motion"
+    },
+    {
+      "id": 3,
+      "name": "Search View",
+      "codeName": "Sherlock Octopus",
+      "function": "Search and Analytics"
+    }
+  ]
+  
