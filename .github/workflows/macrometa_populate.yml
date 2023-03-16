@@ -35,4 +35,4 @@ jobs:
         # Make sure to use the '-c gdnsl.yaml' flag to provide the configuration file.
         # For example:
         gdnsl collection create myTestCollection -c gdnsl.yaml
-        gdnsl collection insert myTestCollection '{"field1": "value1", "field2": "value2"}' -c gdnsl.yaml
+        gdnsl document create --json '{"name": "Julia"}' --json '{"name": "John"}' --collection "myTestCollection" -c gdnsl.yaml
