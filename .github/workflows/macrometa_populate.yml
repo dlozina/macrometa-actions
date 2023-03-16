@@ -1,0 +1,38 @@
+name: Populate Macrometa Collection
+
+on:
+  workflow_dispatch:
+
+jobs:
+  populate-collection:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: 14
+
+    - name: Install gdnsl CLI
+      run: npm install -g gdnsl
+
+    - name: Create gdnsl.yaml
+      run: |
+        cat <<EOF >gdnsl.yaml
+        url: https://gdn.paas.macrometa.io
+        email: ${{ secrets.MACROMETA_EMAIL }}
+        apikey: ${{ secrets.MACROMETA_APIKEY }}
+        regions:
+          - ALL
+        EOF
+
+    - name: Populate collection
+      run: |
+        # Replace with your gdnsl commands to populate the collection.
+        # Make sure to use the '-c gdnsl.yaml' flag to provide the configuration file.
+        # For example:
+        gdnsl collection create myTestCollection -c gdnsl.yaml
+        gdnsl collection insert myTestCollection '{"field1": "value1", "field2": "value2"}' -c gdnsl.yaml
